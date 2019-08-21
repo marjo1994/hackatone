@@ -25,7 +25,7 @@ const Clientname = ({ name, updateName, show, setShow }) => {
       {show === false && (
         <>
           <p data-testid="change-name" className="pValue my-0">{name}</p>
-          <button data-testid="edit" className="checkBtn ml-3 btn btn-color padding-10 mt-0">Edit</button>
+          <button data-testid="edit" className="checkBtn ml-3 btn btn-color padding-10 mt-0">Editar</button>
         </>
       )}
 

@@ -5,7 +5,7 @@ const editStatus = (client, products, token, userId, status, id) => {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
     },
-    body: JSON.stringify({ 'userId': userId, 'client': client, 'products': products, 'status': status })
+    body: JSON.stringify({'status': status })
   }).then((resp) => {
     if (resp.status === 200) {
       return resp.json()

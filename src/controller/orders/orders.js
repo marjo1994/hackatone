@@ -1,11 +1,11 @@
-const postOrders = (client, products, token, userId) => {
+const postOrders = (client, address, products, token, userId, ) => {
   return fetch('http://165.22.166.131:4000/orders', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
     },
-    body: JSON.stringify({ 'userId': userId, 'client': client, 'products': products })
+    body: JSON.stringify({ 'consultoraId': userId, 'client': client, 'direccion': address, 'products': products })
   }).then((resp) => {
     if (resp.status === 200) {
       return resp.json()

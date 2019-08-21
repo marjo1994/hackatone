@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../Header';
 import Clientname from './Cliente';
+import Direccion from './Address'
 import Products from './Products';
 import Pedido from './Pedido'
 import MenuOpts from '../Options';
@@ -10,6 +11,7 @@ import { Catalogue } from './Catalogue';
 
 const Home = (props) => {
   const [name, setName] = useState('');
+  const [address, setAddress] = useState('');
   const [type, setType] = useState('ESIKA')
   const [prodData, setProdData] = useState([]);
   const [items, setItems] = useState([]);
@@ -17,6 +19,9 @@ const Home = (props) => {
 
   const updateName = (e) => {
     setName(e.target.value)
+  }
+  const updateAddress = (e) => {
+    setAddress(e.target.value)
   }
 
   const mapFunc = (fn) => (id) => {
@@ -50,6 +55,8 @@ const Home = (props) => {
       <Header logoutprop={props} />
       <main id="menu" className="container-fluid d-flex flex-wrap align-content-around">
         <Clientname name={name} updateName={updateName} show={show} setShow={setShow} />
+        <Direccion name={address} updateAddress={updateAddress} show={show} setShow={setShow} />
+
         <section className="row">
         {/* <Catalogue /> */}
           <div className="col-md-6">
@@ -74,6 +81,7 @@ const Home = (props) => {
             increase={increase}
             postOrder={() => {
               postOrders(name,
+                address,
                 items.map(el => ({ product: el._id, qty: el.qty })),
                 token,
                 userId)
@@ -81,6 +89,7 @@ const Home = (props) => {
                   console.log(order)
                   setItems([]);
                   setName("");
+                  setAddress("");
                   setShow(true)
                 })
                 .catch(console.error)

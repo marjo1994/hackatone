@@ -38,6 +38,8 @@ const OrderCard = ({ order }) => {
         <div className="card-header d-flex justify-content-between align-items-center">
           <div className="d-flex">
             <div data-testid={order.client} className="border-card-right pr-2">Cliente: {order.client}</div>
+            <div data-testid={order.direccion} className="border-card-right pr-2">Dirección: {order.direccion}</div>
+
             {/* <div className="pl-2"></div> */}
           </div>
           {active === true &&
@@ -62,7 +64,6 @@ const OrderCard = ({ order }) => {
           <select data-testid={`name-${order.client}`} onChange={changeStatus} value={order.status} className="custom-select" id="inputGroupSelect02">
             <option value="pending">Pending</option>
             <option value="canceled">Canceled</option>
-            <option data-testid={`delivering-${order.client}`} value="delivering">Delivering</option>
             <option data-testid={`delivered-${order.client}`} value="delivered">Delivered</option>
           </select>
           <div className="input-group-append">
