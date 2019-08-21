@@ -277,6 +277,12 @@
   border: 1px solid rgba(201, 187, 187, 0.527);
   padding: 2%;
  }
+ .flex-direction-column {
+   flex-direction: column;
+    }
+.color-morado {
+  background-color: rgba(125, 22, 79 , 0.15);
+}
 
 
 /*clases*/

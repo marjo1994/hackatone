@@ -36,7 +36,8 @@ const Form = ({ logprop }) => {
         value={email}
         label='Email'
         update={(e) => setEmail(e.target.value)}
-        placeholder='Email'        
+        placeholder='Email'
+        icon='fas fa-user'
         classValue='emailValue form-control border-none radius-50'
         visibility="input-group-append border-none radius-50" />
       <Inputs
@@ -45,7 +46,8 @@ const Form = ({ logprop }) => {
         value={password}
         label='Password'
         update={(e) => setPassword(e.target.value)}
-        placeholder='Password'        
+        placeholder='Password'
+        icon='fas fa-lock'
         classValue='passwordValue form-control border-none radius-50'
         visibility="input-group-append border-none radius-50"
       />

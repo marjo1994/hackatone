@@ -11,10 +11,20 @@ const MenuOptions = ({click, options, aClass}) => {
   return (
     <ListItem  className="nav-item" onClick={click}>
       <a className={aClass} data-toggle="tab" href="#" role="tab" >
-      <img src={options} alt="img" className="img-fluid max-50" />
+        <img src ={options} />
       </a>
     </ListItem>
   )
 };
+export const MenuOptionsListOfOrders = ({click, options, aClass}) => {
+  return (
+    <ListItem  className="nav-item" onClick={click}>
+      <a className={aClass} data-toggle="tab" href="#" role="tab" >
+        <p>{options}</p>
+      </a>
+    </ListItem>
+  )
+};
+
 
 export default MenuOptions;

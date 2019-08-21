@@ -3,7 +3,8 @@ import Header from '../Header'
 import OrderCard from './order-card';
 import Options from '../Options'
 import getOrders from '../../controller/orders/getOrder'
-
+import { Headertwo } from '../HeaderTwo';
+import {MenuOptionsListOfOrders} from '../Options'
 const user = JSON.parse(localStorage.getItem('user'));
 const Pedidos = (props) => {
   const [orders, setOrders] = useState([]);
@@ -26,11 +27,11 @@ const Pedidos = (props) => {
 
   return (
     <div className="container-fluid">
-      <Header logoutprop={props} />
+      <Headertwo logoutprop={props} />
       <div className="w-100">
         <ul className="nav nav-tabs w-100" role="tablist">
-          <Options click={() => setType('pending')} options="Pendientes" aClass="nav-link active" />
-          <Options click={() => setType('delivered')} options="Entregados" aClass="nav-link" />
+          <MenuOptionsListOfOrders click={() => setType('pending')} options="Pendientes" aClass="nav-link active" />
+          <MenuOptionsListOfOrders click={() => setType('delivered')} options="Entregados" aClass="nav-link" />
         </ul>
         <section data-testid="opt" className="row w-100 justify-content-between">
           {orders.length === 0 &&
