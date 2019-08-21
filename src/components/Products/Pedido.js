@@ -15,10 +15,7 @@ const Pedido = ({ items, remove, increase, decrease, postOrder }) => {
     
     <table className='d-flex  column  '>
       <thead className='width-100'>
-        {/* <tr >
-          <th className='col-12'><h3>Pedido</h3></th>
-        </tr> */}
-        <tr className='d-flex width-100 text-align background-gray align-items-center my-2'>
+        <tr className='d-flex width-100 text-align  align-items-center my-2'>
           <th className='col-4 my-1'>Producto</th>
           <th className='col-4 my-1'>Precio</th>
         </tr>
@@ -27,7 +24,7 @@ const Pedido = ({ items, remove, increase, decrease, postOrder }) => {
         {items.map(i => (
           <Lista item={i} key={i._id} remove={remove} increase={increase} decrease={decrease} />
         ))}
-        <tr className=' d-flex width-100 text-align background-gray align-items-center border-top'>
+        <tr className=' d-flex width-100 text-align  align-items-center '>
         <td className='col-4 my-1'>Articulos: {articles}</td>
           <td className='col-4 my-1'>Total: S/. {total.total}</td>
         </tr>

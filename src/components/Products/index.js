@@ -8,6 +8,7 @@ import postOrders from '../../controller/orders/orders'
 import ctrl from '../../controller/products';
 import { Slider } from './Slideshow';
 
+
 const Home = (props) => {
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
@@ -58,12 +59,13 @@ const Home = (props) => {
   return (
     <>
       <Header logoutprop={props} handlerE={handlerSetEsika} handlerC={handlerSetCyzone} />
+
       <main id="menu" className="container-fluid d-flex flex-wrap align-content-around">
     
         <section className="row">
           <div className="col-md-6">
             <Slider />
-               <div data-testid='opt' className="card-columns">
+               <div className="card-columns">
               {type === 'ESIKA' && (
                 <Products  data={prodData} brand="ESIKA" add={increase} />
               )}
