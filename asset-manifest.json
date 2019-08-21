@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/hackatone/static/css/main.02a39b96.chunk.css",
+    "main.js": "/hackatone/static/js/main.45e2e1d1.chunk.js",
+    "main.js.map": "/hackatone/static/js/main.45e2e1d1.chunk.js.map",
+    "runtime~main.js": "/hackatone/static/js/runtime~main.1e15a08c.js",
+    "runtime~main.js.map": "/hackatone/static/js/runtime~main.1e15a08c.js.map",
+    "static/js/2.96b03462.chunk.js": "/hackatone/static/js/2.96b03462.chunk.js",
+    "static/js/2.96b03462.chunk.js.map": "/hackatone/static/js/2.96b03462.chunk.js.map",
+    "index.html": "/hackatone/index.html",
+    "precache-manifest.ee9f2cca96117725026ddeb5dd7136fe.js": "/hackatone/precache-manifest.ee9f2cca96117725026ddeb5dd7136fe.js",
+    "service-worker.js": "/hackatone/service-worker.js",
+    "static/css/main.02a39b96.chunk.css.map": "/hackatone/static/css/main.02a39b96.chunk.css.map",
+    "static/media/atrasicon.png": "/hackatone/static/media/atrasicon.ab518bcd.png",
+    "static/media/App.css": "/hackatone/static/media/bq.505ee41b.jpg",
+    "static/media/camp12.jpg": "/hackatone/static/media/camp12.0b349bfc.jpg",
+    "static/media/camp13.jpg": "/hackatone/static/media/camp13.f65a91d7.jpg",
+    "static/media/cyzone1.jpg": "/hackatone/static/media/cyzone1.4a7b8335.jpg",
+    "static/media/cyzone2.jpg": "/hackatone/static/media/cyzone2.be7818bf.jpg",
+    "static/media/esika1.jpg": "/hackatone/static/media/esika1.7f8b8f8b.jpg",
+    "static/media/esika2.jpg": "/hackatone/static/media/esika2.d1875cf9.jpg",
+    "static/media/esika5.jpg": "/hackatone/static/media/esika5.e215788b.jpg"
+  }
+}
