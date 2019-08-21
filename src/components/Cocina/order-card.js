@@ -17,44 +17,19 @@ const OrderCard = ({ order }) => {
     // deleteOrder(localStorage.getItem('token'), order._id)
     //   .then(console.log)
   }
-
-  useEffect(() => {
-    let interval = null;
-
-    if (order.status === 'delivered') {
-      setActive(false)
-    }
-    if (active) {
-      interval = setInterval(() => {
-        setTimer(timer + 1)
-      }, 1000)
-    }
-    return () => clearInterval(interval)
-  }, [active, timer])
-
   return (
-    <div data-testid={order._id} className="col-sm-6 mt-3">
+    <div data-testid={order._id} className="col-sm-12 mt-3">
       <div className="card" >
-        <div className="card-header d-flex justify-content-between align-items-center">
-          <div className="d-flex">
-            <div data-testid={order.client} className="border-card-right pr-2">Cliente: {order.client}</div>
-            <div data-testid={order.direccion} className="border-card-right pr-2">Dirección: {order.direccion}</div>
-
-            {/* <div className="pl-2"></div> */}
+        <div className="card-header d-flex justify-content-between align-items-center color-morado">
+          <div className = "d-flex flex-direction-column">
+            <div data-testid={order.client} className="pr-2">Cliente: {order.client}</div>
+            <div data-testid={order.direccion} className="pr-2">Dirección: {order.direccion}</div>
           </div>
-          {active === true &&
-            <div>
-              {(Math.floor((timer).toFixed() / 60)) % 60}:
-            {(timer).toFixed() % 60}
-            </div>}
-          {active === false &&
-            <div>
-              {(Math.floor((finalTime).toFixed() / 60)) % 60}:
-            {(finalTime).toFixed() % 60}
-            </div>}
+            {/* <div className="pl-2"></div> */}
+          
         </div>
         <div className="card-body">
-          <ul className="list-group">
+          <ul className="">
             {productsArr && productsArr.map((el) => {
               return (<ProductList el={el} key={el.product.productId} />)
             })}
@@ -62,12 +37,12 @@ const OrderCard = ({ order }) => {
         </div>
         <div className="input-group card-footer">
           <select data-testid={`name-${order.client}`} onChange={changeStatus} value={order.status} className="custom-select" id="inputGroupSelect02">
-            <option value="pending">Pending</option>
-            <option value="canceled">Canceled</option>
-            <option data-testid={`delivered-${order.client}`} value="delivered">Delivered</option>
+            <option value="pending">Pendiente</option>
+            <option value="canceled">Cancelado</option>
+            <option data-testid={`delivered-${order.client}`} value="delivered">Entregado</option>
           </select>
           <div className="input-group-append">
-            <label className="input-group-text" htmlFor="inputGroupSelect02">Status</label>
+            <label className="input-group-text" htmlFor="inputGroupSelect02">Estado de Orden</label>
           </div>
         </div>
       </div>

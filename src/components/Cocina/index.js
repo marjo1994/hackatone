@@ -3,16 +3,18 @@ import Header from '../Header'
 import OrderCard from './order-card';
 import Options from '../Options'
 import getOrders from '../../controller/orders/getOrder'
-
-const Cocina = (props) => {
+import { Headertwo } from '../HeaderTwo';
+import {MenuOptionsListOfOrders} from '../Options'
+const user = JSON.parse(localStorage.getItem('user'));
+const Pedidos = (props) => {
   const [orders, setOrders] = useState([]);
   const [type, setType] = useState('pending');
 
   useEffect(() => {
     const interval = () => {
 
-      getOrders(localStorage.getItem('token')).then((data) => {
-        // console.log(data)
+      getOrders(localStorage.getItem('token'),user._id).then((data) => {
+        console.log(data)
         setOrders(data)
       })
 
@@ -25,11 +27,11 @@ const Cocina = (props) => {
 
   return (
     <div className="container-fluid">
-      <Header logoutprop={props} />
+      <Headertwo logoutprop={props} />
       <div className="w-100">
         <ul className="nav nav-tabs w-100" role="tablist">
-          <Options click={() => setType('pending')} options="Pendientes" aClass="nav-link active" />
-          <Options click={() => setType('delivered')} options="Entregados" aClass="nav-link" />
+          <MenuOptionsListOfOrders click={() => setType('pending')} options="Pendientes" aClass="nav-link active" />
+          <MenuOptionsListOfOrders click={() => setType('delivered')} options="Entregados" aClass="nav-link" />
         </ul>
         <section data-testid="opt" className="row w-100 justify-content-between">
           {orders.length === 0 &&
@@ -60,4 +62,4 @@ const Cocina = (props) => {
     </div>
   )
 }
-export default Cocina
+export default Pedidos

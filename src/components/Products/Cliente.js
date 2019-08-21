@@ -8,7 +8,7 @@ const Clientname = ({ name, updateName, show, setShow }) => {
   }
 
   return (
-    <form onSubmit={onSubmit} className="d-flex align-items-center form-val my-4" data-test-id="div">
+    <form onSubmit={onSubmit} className="d-flex align-items-center  my-4">
       <label className="my-0 mr-2">Cliente: </label>
       {show === true && (
         <>
@@ -18,16 +18,16 @@ const Clientname = ({ name, updateName, show, setShow }) => {
             onChange={updateName}
             placeholder='Nombre'
             className='name-value form-control' />
-          <button data-testid='submit' className="checkBtn ml-3 btn btn-color padding-10 mt-0"><i className="fas fa-check"></i></button>
+           <button data-testid='submit' className="checkBtn ml-3 btn btn-color padding-10 mt-0"><i className="fas fa-check"></i></button>
         </>
       )
       }
-      {show === false && (
+     {show === false && (
         <>
           <p data-testid="change-name" className="pValue my-0">{name}</p>
           <button data-testid="edit" className="checkBtn ml-3 btn btn-color padding-10 mt-0">Editar</button>
         </>
-      )}
+      )} 
 
     </form>
   )

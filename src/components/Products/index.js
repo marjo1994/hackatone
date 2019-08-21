@@ -4,10 +4,9 @@ import Clientname from './Cliente';
 import Direccion from './Address'
 import Products from './Products';
 import Pedido from './Pedido'
-import MenuOpts from '../Options';
 import postOrders from '../../controller/orders/orders'
 import ctrl from '../../controller/products';
-import { Catalogue } from './Catalogue';
+import { Slider } from './Slideshow';
 
 const Home = (props) => {
   const [name, setName] = useState('');
@@ -43,28 +42,28 @@ const Home = (props) => {
       },
     }).then(resp => resp.json())
       .then(data => {
-        // console.log(data)
         setProdData(data)
       })
   }, [])
 
-  console.log(prodData)
+  
+  const handlerSetEsika = () => {
+    setType('ESIKA')
+  }
 
+  const handlerSetCyzone = () => {
+    setType('CYZONE')
+  }
+  
   return (
     <>
-      <Header logoutprop={props} />
+      <Header logoutprop={props} handlerE={handlerSetEsika} handlerC={handlerSetCyzone} />
       <main id="menu" className="container-fluid d-flex flex-wrap align-content-around">
-        <Clientname name={name} updateName={updateName} show={show} setShow={setShow} />
-        <Direccion name={address} updateAddress={updateAddress} show={show} setShow={setShow} />
-
+    
         <section className="row">
-        {/* <Catalogue /> */}
           <div className="col-md-6">
-            <ul className="nav nav-tabs w-100" role="tablist">
-              <MenuOpts click={() => setType('ESIKA')} options="ESIKA" aClass="nav-link active" />
-              <MenuOpts click={() => setType('CYZONE')} options="CYZONE" aClass="nav-link" />
-            </ul>
-            <div data-testid='opt' className="card-columns">
+            <Slider />
+               <div data-testid='opt' className="card-columns">
               {type === 'ESIKA' && (
                 <Products  data={prodData} brand="ESIKA" add={increase} />
               )}
@@ -74,8 +73,11 @@ const Home = (props) => {
             </div>
           </div>
           
-
-          <Pedido
+            <div className="col-md-6">
+            <h3 className="text-align">PEDIDO</h3>
+            <Clientname name={name} updateName={updateName} show={show} setShow={setShow} />
+            <Direccion name={address} updateAddress={updateAddress} show={show} setShow={setShow} />
+            <Pedido
             items={ctrl.mix(prodData, items)}
             remove={remove} decrease={decrease}
             increase={increase}
@@ -94,7 +96,8 @@ const Home = (props) => {
                 })
                 .catch(console.error)
             }} />
-        </section>
+            </div>
+          </section>
 
       </main>
     </>

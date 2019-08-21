@@ -23,6 +23,7 @@ const Form = ({ logprop }) => {
       });
 
       getUser(email).then((data) => {
+        console.log(data)
         localStorage.setItem('user', JSON.stringify(data));
         auth.login(() => { logprop.history.push("/home") })
       }).catch(console.error)

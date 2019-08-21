@@ -1,29 +1,29 @@
 import React from 'react';
-import burger from '../images/hamburger.png'
-// eslint-disable-next-line
+import Atras from '../images/atrasicon.png'
 import auth from '../controller/routes/auth'
-const Header = ({ logoutprop }) => {
+import MenuOptions from './Options';
+import styled from 'styled-components'
+
+const  HeaderSection = styled.header`
+  padding: 5px;
+  background: #333333;
+`;
+const Header = ({ logoutprop, handlerE, handlerC }) => {
+  
   return (
-    <header data-testid="header" className="width-100 mt-2 mb-4 d-flex height-60">
-      <ul className="width-100 nav nav-tabs justify-content-center">
+    <HeaderSection data-testid="header" className="width-100 mt-2 mb-4 d-flex height-60">
+      <ul className="width-100 nav ">
         <li className="nav-item">
-          <button data-testid='burger' onClick={() => { auth.login(() => { logoutprop.history.push("/home") }) }} className="text-center align-self-start mb-4 border-none transparent cursor">
-            <img src={burger} alt="img" className="img-fluid max-50" />
+          <button onClick={() => { auth.login(() => { logoutprop.history.push("/home") }) }} className="text-center align-self-start mb-4 border-none transparent cursor">
+            <img src={Atras} alt="img" className="img-fluid max-50" />
           </button>
         </li>
-        <li className="nav-item dropdown bars">
-          <div className="nav-link dropdown-toggle dropdown-color" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i className='fas fa-bars'></i></div>
-          <div className="dropdown-menu dropdown-menu-right" >
-            <a data-testid='close' 
-               onClick={() => {
-                auth.logout(() => { logoutprop.history.push("/") });
-                localStorage.setItem('token', '')
-                }} >Cerrar Sesión</a>
-          </div>
-        </li>
+        <MenuOptions click={handlerE} options="https://d1mmiz9ub7pgyo.cloudfront.net/Lannding/LandingDigitalPeru/esika_logo_white.png" aClass="nav-link active" />
+        <MenuOptions click={handlerC} options="https://d1mmiz9ub7pgyo.cloudfront.net/Lannding/LandingDigitalPeru/cyzone_logo_white.png" aClass="nav-link active" />
+        <MenuOptions click={handlerC} options="https://d1mmiz9ub7pgyo.cloudfront.net/Lannding/LandingDigitalPeru/lbel_logo_white.png" aClass="nav-link active" />
       </ul>
 
-    </header>
+    </HeaderSection>
   )
 };
 

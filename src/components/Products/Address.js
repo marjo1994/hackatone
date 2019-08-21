@@ -8,7 +8,7 @@ const Address = ({ address, updateAddress, show, setShow }) => {
   }
 
   return (
-    <form onSubmit={onSubmit} className="d-flex align-items-center form-val my-4" data-test-id="div">
+    <form onSubmit={onSubmit} className="d-flex align-items-center  my-4" data-test-id="div">
       <label className="my-0 mr-2">Dirección: </label>
       {show === true && (
         <>
@@ -22,12 +22,12 @@ const Address = ({ address, updateAddress, show, setShow }) => {
         </>
       )
       }
-      {show === false && (
+       {show === false && (
         <>
           <p data-testid="change-name" className="pValue my-0">{address}</p>
           <button data-testid="edit" className="checkBtn ml-3 btn btn-color padding-10 mt-0">Editar</button>
         </>
-      )}
+      )} 
 
     </form>
   )

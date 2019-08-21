@@ -89,7 +89,7 @@
 }
 
 .card-footer-btn {
-  background-color: #758da5;
+  /* background-color: #758da5; */
   color: white;
 }
 
@@ -149,8 +149,12 @@
 .container-menu {
   position: relative;
   text-align: center;
-  color: white;
+  color: black;
   cursor: pointer;
+  border: 1px solid black;
+  width: 600px;
+  margin : 10px;
+  margin-left: 30%;
 }
 
 .filter-img:hover {
@@ -162,10 +166,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
-  font-weight: bolder;
+  color: black;
+  font-weight: museo sans;
   font-size: 2em;
-  text-shadow: 2px 2px #6c757d
+  /* text-shadow: 2px 2px #6c757d */
 } 
 
 .width-18 {
@@ -175,28 +179,29 @@
 .img-w {
   max-width: 500px;
 }
-
+/* 
 .blue-color {
   color: #3594cc;
-}
+} */
 
 .background-blue {
-  background-color: #3594cc;
-  border-color: #3594cc;
+  background-color: #333333;
+  border-color: #333333;
 }
 
 .btn-color {
   background-color: #c0941cd5;
   color: white;
   font-weight: bolder;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   margin-top: 15px;
+  float: right;
 }
 
-.btn-color:hover {
-  background-color: #c72c21;
+/* .btn-color:hover {
+  background-color: #4aaae2;
   color: white;
-}
+} */
 
 .column {
   flex-direction: column;
@@ -251,6 +256,33 @@
   border: 1px solid rgba(201, 187, 187, 0.527);
   padding: 2%;
  }
+
+
+/*clases*/
+
+/*clases*/
+.padding-login{
+  padding: 0%;
+}
+.opacyty-login{
+ background: rgba(32, 5, 19, 0.514);
+ height: 15rem;
+ align-content: center;
+ padding-top: 4%;
+}
+.opacyty-login-top{
+  margin-top: 10%;
+ }
+ .border-login{
+  border: 1px solid rgba(201, 187, 187, 0.527);
+  padding: 2%;
+ }
+ .flex-direction-column {
+   flex-direction: column;
+    }
+.color-morado {
+  background-color: rgba(125, 22, 79 , 0.15);
+}
 
 
 /*clases*/

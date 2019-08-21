@@ -1,5 +1,5 @@
-const getOrders = (token) => {
-  return fetch('http://165.22.166.131:4000/orders', {
+const getOrders = (token, uid) => {
+  return fetch(`http://165.22.166.131:4000/list/${uid}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -7,6 +7,7 @@ const getOrders = (token) => {
     }
   }).then((resp) => {
     if (resp.status === 200) {
+      // resp.json().then(e => console.log(e))
       return resp.json()
     } else if (resp.status === 401) {
       return Promise.reject({ message: 'Ingrese token válido' })
@@ -16,3 +17,4 @@ const getOrders = (token) => {
 
 }
 export default getOrders;
+///list/:consultantid
